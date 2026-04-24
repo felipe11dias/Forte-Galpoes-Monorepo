@@ -1,0 +1,171 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Brand / Cores" />
+
+# Paleta de Cores — Forte Galpões
+
+Paleta profissional gerada para corretagem industrial de imóveis.
+Cada escala contém 11 passos (50–950) para máxima flexibilidade em UI.
+
+---
+
+## Primary — Navy Steel Blue
+
+Cor primária da marca. Comunica solidez, profissionalismo e confiança.
+Derivada do azul do aço estrutural — referência ao setor industrial.
+
+<ColorPalette>
+  <ColorItem
+    title="primary"
+    subtitle="Navy Steel Blue — #1C3F73"
+    colors={{
+      '50':  '#F0F4FB',
+      '100': '#D8E3F4',
+      '200': '#B1C8EA',
+      '300': '#82A6D9',
+      '400': '#5584C5',
+      '500': '#3468B0',
+      '600': '#295592',
+      '700': '#1C3F73',
+      '800': '#132C52',
+      '900': '#0B1A33',
+      '950': '#060D1A',
+    }}
+  />
+</ColorPalette>
+
+**Uso recomendado**
+| Step | Exemplo de uso |
+|---|---|
+| 50–100 | Fundos de seção, hover backgrounds suaves |
+| 200–300 | Bordas de destaque, links secundários |
+| 400–500 | Ícones, badges, estados interativos |
+| **700 (DEFAULT)** | **Botões primários, headers, CTA principal** |
+| 800–900 | Estados pressed/active, texto de destaque |
+| 950 | Fundos dark, modo escuro |
+
+---
+
+## Accent — Construction Orange
+
+Cor de acento. Energia, ação e dinamismo industrial.
+Referência às vestes de segurança e maquinário pesado do setor logístico.
+
+<ColorPalette>
+  <ColorItem
+    title="accent"
+    subtitle="Construction Orange — #E87722"
+    colors={{
+      '50':  '#FEF5EA',
+      '100': '#FDE3C2',
+      '200': '#FBC680',
+      '300': '#F9A73D',
+      '400': '#F48B1A',
+      '500': '#E87722',
+      '600': '#C4601A',
+      '700': '#9C4B15',
+      '800': '#6F360F',
+      '900': '#42200A',
+      '950': '#221005',
+    }}
+  />
+</ColorPalette>
+
+**Uso recomendado**
+| Step | Exemplo de uso |
+|---|---|
+| 50–100 | Alertas suaves, highlight backgrounds |
+| 200–300 | Bordas de destaque, ícones secundários |
+| **500 (DEFAULT)** | **Botões secundários, badges de destaque, CTA accent** |
+| 600–700 | Estados hover/active |
+| 800–950 | Modo escuro, fundos de alerta |
+
+---
+
+## Neutral — Industrial Gray
+
+Escala neutra inspirada em concreto, aço e materiais industriais.
+Usada para texto, bordas, superfícies e elementos estruturais da UI.
+
+<ColorPalette>
+  <ColorItem
+    title="neutral"
+    subtitle="Industrial Gray — #5B6B7C"
+    colors={{
+      '50':  '#F4F5F7',
+      '100': '#E6E8EC',
+      '200': '#CBD0D7',
+      '300': '#A4AEB9',
+      '400': '#7A8899',
+      '500': '#5B6B7C',
+      '600': '#445566',
+      '700': '#334151',
+      '800': '#202C38',
+      '900': '#121A22',
+      '950': '#080D11',
+    }}
+  />
+</ColorPalette>
+
+---
+
+## Semânticas — Status e Feedback
+
+Cores semânticas para comunicar estado em componentes de UI.
+Compatíveis com as escalas do Tailwind CSS e com WCAG 2.1 AA.
+
+<ColorPalette>
+  <ColorItem
+    title="success"
+    subtitle="Verde — confirmação, sucesso, disponibilidade"
+    colors={{ light: '#DCFCE7', DEFAULT: '#16A34A', dark: '#14532D' }}
+  />
+  <ColorItem
+    title="warning"
+    subtitle="Âmbar — atenção, pendente, revisão necessária"
+    colors={{ light: '#FEF9C3', DEFAULT: '#CA8A04', dark: '#713F12' }}
+  />
+  <ColorItem
+    title="danger"
+    subtitle="Vermelho — erro, exclusão, risco"
+    colors={{ light: '#FEE2E2', DEFAULT: '#DC2626', dark: '#7F1D1D' }}
+  />
+  <ColorItem
+    title="info"
+    subtitle="Azul — informação, dica, neutro"
+    colors={{ light: '#DBEAFE', DEFAULT: '#2563EB', dark: '#1E3A8A' }}
+  />
+</ColorPalette>
+
+---
+
+## Surface — Superfícies e Fundos
+
+<ColorPalette>
+  <ColorItem
+    title="surface"
+    subtitle="Tokens de superfície para layout"
+    colors={{
+      background:      '#FFFFFF',
+      base:            '#F4F5F7',
+      border:          '#CBD0D7',
+      borderSubtle:    '#E6E8EC',
+      foreground:      '#121A22',
+      foregroundMuted: '#5B6B7C',
+    }}
+  />
+</ColorPalette>
+
+---
+
+## Importação TypeScript
+
+```ts
+import { brandColors, PRIMARY_COLORS, ACCENT_COLORS } from '@forte-galpoes/ui-kit';
+
+// Usando um valor específico:
+const primary700 = brandColors.primary['700']; // '#1C3F73'
+
+// Tailwind (via classe utilitária):
+// bg-primary-700  text-accent-500  border-neutral-200
+```

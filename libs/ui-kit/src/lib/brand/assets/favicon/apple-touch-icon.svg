@@ -1,0 +1,21 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Forte Galpões — Apple Touch Icon</title>
+  <!-- 180×180 para Apple Touch Icon (iPhone/iPad home screen) -->
+  <!-- iOS aplica bordas arredondadas e sombra automaticamente -->
+  <!-- Fundo branco: comportamento esperado para ícones iOS -->
+  <rect width="180" height="180" fill="#FFFFFF"/>
+
+  <!-- Badge centralizado com padding de 24px -->
+  <defs>
+    <clipPath id="apple-clip">
+      <rect x="18" y="18" width="144" height="144" rx="18"/>
+    </clipPath>
+  </defs>
+  <rect x="18" y="18" width="144" height="144" rx="18" fill="#1C3F73"/>
+  <rect x="18" y="144" width="144" height="18" fill="#E87722" clip-path="url(#apple-clip)"/>
+  <text
+    x="90" y="105"
+    font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="800" font-size="60" fill="#FFFFFF"
+    text-anchor="middle" letter-spacing="-1.5">FG</text>
+</svg>

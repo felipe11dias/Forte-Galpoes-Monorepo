@@ -7,6 +7,12 @@ const config: StorybookConfig = {
     name: '@storybook/angular',
     options: {},
   },
+  /**
+   * Serve os assets de marca como arquivos estáticos no Storybook.
+   * Logo SVGs ficam disponíveis em: /logo/logo-*.svg
+   * Favicons ficam disponíveis em: /favicon/*.svg
+   */
+  staticDirs: ['../src/lib/brand/assets'],
 };
 
 export default config;

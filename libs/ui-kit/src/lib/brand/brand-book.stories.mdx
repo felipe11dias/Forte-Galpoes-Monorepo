@@ -1,0 +1,100 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Brand / Brand Book" />
+
+# Brand Book — Forte Galpões
+
+<div style={{ background: '#1C3F73', padding: '2rem 2.5rem', borderRadius: '8px', marginBottom: '2rem' }}>
+  <img src="/logo/logo-inverse.svg" alt="Forte Galpões" style={{ height: '52px' }} />
+  <p style={{ color: 'rgba(255,255,255,0.75)', marginTop: '1rem', fontSize: '0.95rem', lineHeight: '1.6' }}>
+    Corretagem de Imóveis — Galpões e Terrenos
+  </p>
+</div>
+
+## Sobre a Marca
+
+**Forte Galpões** é uma corretora de imóveis especializada em galpões logísticos e industriais, condomínios empresariais e terrenos. A marca comunica solidez, confiança e expertise no segmento de real estate industrial.
+
+---
+
+## Missão da Identidade Visual
+
+| Atributo | Valor |
+|---|---|
+| **Personalidade** | Sólido · Confiável · Profissional · Direto |
+| **Tom de voz** | Objetivo, técnico mas acessível |
+| **Setor** | Real estate industrial / logístico |
+| **Diferencial** | Expertise técnica + atendimento consultivo |
+
+---
+
+## Elementos da Identidade
+
+### 1. Logo
+
+O logotipo é composto por dois elementos indissociáveis:
+
+- **Monograma FG** — badge quadrado em navy com acento laranja na base
+- **Wordmark** — "FORTE GALPÕES" em Inter Bold + subtítulo "CORRETAGEM DE IMÓVEIS"
+
+→ Acesse a história **Brand / Logo** para ver todas as variações e regras de uso.
+
+### 2. Cores
+
+A paleta foi construída sobre dois eixos:
+
+- **Primary (Navy Steel Blue)** — autoridade, profissionalismo, confiança
+- **Accent (Construction Orange)** — energia, ação, chamada à ação industrial
+
+→ Acesse a história **Brand / Cores** para a paleta completa.
+
+### 3. Tipografia
+
+Fonte única: **Inter** (Google Fonts, fonte variável, pesos 100–900).
+
+→ Acesse a história **Brand / Tipografia** para a escala tipográfica.
+
+---
+
+## Regras de Uso da Marca
+
+### ✅ Uso correto
+- Usar o logo sobre fundos brancos ou neutros claros (versão padrão)
+- Usar o logo inverso sobre fundos escuros ou fotográficos
+- Manter proporção — nunca esticar ou comprimir
+- Respeitar espaço de proteção mínimo (= altura da letra "F" no wordmark)
+
+### ❌ Uso proibido
+- Alterar as cores do logo fora das variações aprovadas
+- Aplicar efeitos (sombra, gradiente, bevel) sobre o logo
+- Usar fundos que criem baixo contraste com o logo
+- Reduzir o logo abaixo de 32px de altura (use o ícone FG isolado abaixo de 48px)
+- Usar fontes diferentes de Inter nos materiais da marca
+
+---
+
+## Stack de Design
+
+| Camada | Tecnologia |
+|---|---|
+| Componentes | Angular 19 (standalone, OnPush) |
+| Estilos | Tailwind CSS 3.4 + CSS Custom Properties |
+| Documentação | Storybook 10 + MDX |
+| Fontes | Inter via Google Fonts (ou @fontsource/inter para self-hosting) |
+| Ícones | Sprint 4 (pendente) |
+| Design tool | Figma (exportar paths do logo para produção) |
+
+---
+
+## Versionamento
+
+| Sprint | Status | Entrega |
+|---|---|---|
+| Sprint 2 | ✅ Concluído | Scaffold ui-kit + Storybook + Tailwind |
+| Sprint 3 | ✅ Concluído | Brand tokens + Logo SVG + Favicon + Brand Book |
+| Sprint 4 | 🔜 Pendente | Componentes reais (Button, Input, Card…) |
+| Sprint 5 | 🔜 Pendente | App `landing` |
+
+> **Nota sobre o logo SVG**: Os arquivos em `assets/logo/` usam `<text>` com font-stack de fallback.
+> Para produção, exporte os paths tipográficos do Figma e substitua os elementos `<text>` por `<path>`.
+> Isso garante renderização idêntica em todos os ambientes, incluindo SVG exportado para PDF.

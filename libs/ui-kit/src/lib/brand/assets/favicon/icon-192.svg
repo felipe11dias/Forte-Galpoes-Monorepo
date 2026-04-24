@@ -1,0 +1,19 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Forte Galpões — PWA Icon 192×192</title>
+  <!-- 192×192 — ícone PWA para Android / Chrome -->
+  <rect width="192" height="192" fill="#FFFFFF"/>
+
+  <!-- Badge 144×144 centralizado (padding 24px) -->
+  <defs>
+    <clipPath id="pwa192-clip">
+      <rect x="24" y="24" width="144" height="144" rx="18"/>
+    </clipPath>
+  </defs>
+  <rect x="24" y="24" width="144" height="144" rx="18" fill="#1C3F73"/>
+  <rect x="24" y="150" width="144" height="18" fill="#E87722" clip-path="url(#pwa192-clip)"/>
+  <text
+    x="96" y="112"
+    font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="800" font-size="60" fill="#FFFFFF"
+    text-anchor="middle" letter-spacing="-1.5">FG</text>
+</svg>

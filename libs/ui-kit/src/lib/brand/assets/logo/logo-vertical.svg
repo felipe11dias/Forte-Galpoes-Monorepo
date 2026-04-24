@@ -1,0 +1,35 @@
+<svg width="160" height="84" viewBox="0 0 160 84" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forte Galpões — logo vertical">
+  <title>Forte Galpões</title>
+  <defs>
+    <clipPath id="v-clip">
+      <rect x="56" width="48" height="48" rx="6"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── Badge centralizado ─────────────────────────────────────────────── -->
+  <rect x="56" y="0" width="48" height="48" rx="6" fill="#1C3F73"/>
+  <rect x="56" y="42" width="48" height="6" fill="#E87722" clip-path="url(#v-clip)"/>
+  <text
+    x="80" y="29"
+    font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="800" font-size="20" fill="#FFFFFF"
+    text-anchor="middle" letter-spacing="-0.5">FG</text>
+
+  <!-- ── Wordmark centralizado ──────────────────────────────────────────── -->
+  <!-- Divisor decorativo -->
+  <rect x="64" y="56" width="32" height="1.5" rx="0.75" fill="#CBD0D7"/>
+
+  <!-- Nome principal -->
+  <text
+    x="80" y="69"
+    font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="700" font-size="13" fill="#1C3F73"
+    text-anchor="middle" letter-spacing="0.06em">FORTE GALPÕES</text>
+
+  <!-- Subtítulo -->
+  <text
+    x="80" y="80"
+    font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="400" font-size="7" fill="#5B6B7C"
+    text-anchor="middle" letter-spacing="0.1em">CORRETAGEM DE IMÓVEIS</text>
+</svg>
