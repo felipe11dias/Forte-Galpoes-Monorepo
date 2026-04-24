@@ -232,3 +232,40 @@ forte-galpoes-workspace/
 - Criar a lib `ui-kit` com componentes base (Button, Card, Hero, etc.)
 - Configurar Storybook para documentação de componentes
 - Configurar Playwright para testes E2E
+
+---
+
+## Bibliotecas
+
+### `@forte-galpoes/ui-kit` — Design System
+
+> **Documentação completa:** [`libs/ui-kit/README.md`](libs/ui-kit/README.md)
+
+Design System compartilhado com componentes Angular standalone, design tokens, ícones e diretrizes de marca.
+
+**Importação:**
+
+```ts
+import { ButtonComponent } from '@forte-galpoes/ui-kit';
+```
+
+**Comandos Storybook:**
+
+```bash
+# Iniciar servidor de desenvolvimento do Storybook
+pnpm exec nx storybook ui-kit
+
+# Gerar bundle estático do Storybook
+pnpm exec nx build-storybook ui-kit
+
+# Servir o bundle estático localmente
+pnpm exec nx static-storybook ui-kit
+```
+
+**Build & Testes da lib:**
+
+```bash
+pnpm exec nx build ui-kit       # Compila via ng-packagr → dist/libs/ui-kit
+pnpm exec nx test ui-kit        # Jest
+pnpm exec nx lint ui-kit        # ESLint (Angular + @typescript-eslint/strict)
+```
