@@ -180,9 +180,6 @@ importers:
 
   libs/ui-kit:
     dependencies:
-      '@angular/common':
-        specifier: ^19.2.0
-        version: 19.2.21(@angular/core@19.2.21(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@angular/core':
         specifier: ^19.2.0
         version: 19.2.21(rxjs@7.8.2)(zone.js@0.15.1)
