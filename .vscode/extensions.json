@@ -5,6 +5,7 @@
     "nrwl.angular-console",
     "angular.ng-template",
     "bradlc.vscode-tailwindcss",
-    "ms-vscode.vscode-typescript-next"
+    "ms-vscode.vscode-typescript-next",
+    "firsttris.vscode-jest-runner"
   ]
 }
