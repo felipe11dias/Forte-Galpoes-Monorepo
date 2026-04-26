@@ -6,12 +6,17 @@ const workspacePreset = require('../../tools/tailwind-workspace-preset');
 module.exports = {
   presets: [workspacePreset],
   content: [
-    join(__dirname, 'src/**/*.{html,ts}'),
+    join(__dirname, 'src/**/*.{html,ts,scss}'),
     join(__dirname, '**/*.stories.{ts,tsx,js,jsx}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: '375px',
+        '3xl': '1536px',
+      },
+    },
   },
   plugins: [],
 };

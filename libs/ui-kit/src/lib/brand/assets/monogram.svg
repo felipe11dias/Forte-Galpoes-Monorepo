@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="FG — monograma Forte Galpões">
+  <!-- Background square with chamfered corners -->
+  <path d="M4 10 L10 4 L54 4 L60 10 L60 54 L54 60 L10 60 L4 54 Z" fill="#1C2733"/>
+  <!-- F letter -->
+  <!-- Vertical stem -->
+  <rect x="12" y="16" width="6" height="32" rx="1" fill="#F5F2ED"/>
+  <!-- Top bar -->
+  <rect x="12" y="16" width="16" height="6" rx="1" fill="#F5F2ED"/>
+  <!-- Mid bar -->
+  <rect x="12" y="27" width="12" height="5" rx="1" fill="#F5F2ED"/>
+  <!-- G letter -->
+  <!-- Outer arc (approximated with path) -->
+  <path d="M38 16 C30 16 28 22 28 32 C28 42 30 48 38 48 C43 48 46 45 47 42 L47 32 L40 32 L40 37 L42 37 L42 41 C41 42 39.5 43 38 43 C33 43 33 38 33 32 C33 26 33 21 38 21 C41 21 42 23 43 25 L48 22 C46 18 43 16 38 16 Z" fill="#A57340"/>
+</svg>

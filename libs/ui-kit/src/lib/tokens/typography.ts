@@ -1,93 +1,48 @@
-/**
- * Forte Galpões — Typography Tokens
- *
- * Tokens semânticos de tipografia prontos para uso em componentes.
- * Escala alinhada com Tailwind CSS defaults.
- */
-
-/** Tokens de tipografia semânticos para uso em componentes. */
-export const typographyTokens = {
-  /** Título principal de página (hero, H1) */
-  display: {
-    fontSize: '3.75rem', // 6xl
-    lineHeight: '1',
-    fontWeight: '700',
-    letterSpacing: '-0.025em',
-  },
-  /** Título de seção (H2) */
-  h1: {
-    fontSize: '3rem', // 5xl
-    lineHeight: '1',
-    fontWeight: '700',
-    letterSpacing: '-0.025em',
-  },
-  /** Título de subseção (H3) */
-  h2: {
-    fontSize: '2.25rem', // 4xl
-    lineHeight: '2.5rem',
-    fontWeight: '700',
-    letterSpacing: '-0.025em',
-  },
-  h3: {
-    fontSize: '1.875rem', // 3xl
-    lineHeight: '2.25rem',
-    fontWeight: '600',
-    letterSpacing: '-0.025em',
-  },
-  h4: {
-    fontSize: '1.5rem', // 2xl
-    lineHeight: '2rem',
-    fontWeight: '600',
-    letterSpacing: '0em',
-  },
-  h5: {
-    fontSize: '1.25rem', // xl
-    lineHeight: '1.75rem',
-    fontWeight: '600',
-    letterSpacing: '0em',
-  },
-  h6: {
-    fontSize: '1rem', // base
-    lineHeight: '1.5rem',
-    fontWeight: '600',
-    letterSpacing: '0em',
-  },
-  /** Parágrafo (corpo de texto) */
-  body: {
-    fontSize: '1rem', // base
-    lineHeight: '1.5rem',
-    fontWeight: '400',
-    letterSpacing: '0em',
-  },
-  /** Texto secundário / legenda */
-  small: {
-    fontSize: '0.875rem', // sm
-    lineHeight: '1.25rem',
-    fontWeight: '400',
-    letterSpacing: '0em',
-  },
-  /** Label de form / tag / badge */
-  label: {
-    fontSize: '0.75rem', // xs
-    lineHeight: '1rem',
-    fontWeight: '500',
-    letterSpacing: '0.05em',
-  },
-  /** Overline / caption uppercase */
-  overline: {
-    fontSize: '0.75rem', // xs
-    lineHeight: '1rem',
-    fontWeight: '600',
-    letterSpacing: '0.1em',
-  },
-  /** Código inline / referências técnicas */
-  code: {
-    fontSize: '0.875rem', // sm
-    lineHeight: '1.5rem',
-    fontWeight: '400',
-    letterSpacing: '0em',
-  },
+export const fontFamilies = {
+  display: ['Barlow Condensed', 'Archivo Black', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  serif: ['Cormorant Garamond', 'Playfair Display', 'ui-serif', 'Georgia', 'serif'],
+  sans: ['Inter', 'DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
 } as const;
 
-export type TypographyTokenKey = keyof typeof typographyTokens;
-export type TypographyToken = typeof typographyTokens;
+/** Modular scale ratio 1.25 (major third), base 16px */
+export const fontSizes = {
+  display: '4rem', // 64px
+  h1: '3rem', // 48px
+  h2: '2.25rem', // 36px
+  h3: '1.75rem', // 28px
+  h4: '1.375rem', // 22px
+  'body-lg': '1.125rem', // 18px
+  body: '1rem', // 16px
+  'body-sm': '0.875rem', // 14px
+  caption: '0.75rem', // 12px
+  overline: '0.6875rem', // 11px
+} as const;
+
+export const fontWeights = {
+  regular: '400',
+  medium: '500',
+  semibold: '600',
+  bold: '700',
+  black: '900',
+} as const;
+
+export const lineHeights = {
+  tight: '1.1',
+  snug: '1.25',
+  normal: '1.5',
+  relaxed: '1.625',
+  loose: '2',
+} as const;
+
+export const letterSpacings = {
+  tight: '-0.025em',
+  normal: '0',
+  wide: '0.05em',
+  wider: '0.1em',
+  widest: '0.2em',
+} as const;
+
+export type FontFamily = keyof typeof fontFamilies;
+export type FontSize = keyof typeof fontSizes;
+export type FontWeight = keyof typeof fontWeights;

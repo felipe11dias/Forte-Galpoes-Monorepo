@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Forte Galpões — símbolo">
+  <!-- Warehouse silhouette with embedded F structure — grid 8x8 units (8px each) -->
+  <!-- Base body of the warehouse -->
+  <rect x="8" y="28" width="48" height="28" rx="1.5" fill="#1C2733"/>
+  <!-- Gabled roof (two-slope / gable shape) -->
+  <path d="M4 30 L32 8 L60 30" stroke="#1C2733" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="#1C2733"/>
+  <!-- Roof cap / ridge -->
+  <rect x="29" y="6" width="6" height="5" rx="1" fill="#A57340"/>
+  <!-- F structure embedded as vertical beam + two horizontal bars -->
+  <!-- Vertical bar of F -->
+  <rect x="18" y="32" width="5" height="20" rx="1" fill="#F5F2ED"/>
+  <!-- Top horizontal bar of F -->
+  <rect x="18" y="32" width="16" height="5" rx="1" fill="#F5F2ED"/>
+  <!-- Middle horizontal bar of F (shorter) -->
+  <rect x="18" y="40" width="12" height="4" rx="1" fill="#F5F2ED"/>
+  <!-- Right column / pillar -->
+  <rect x="41" y="32" width="5" height="20" rx="1" fill="#A57340"/>
+  <!-- Door opening -->
+  <rect x="38" y="44" width="10" height="12" rx="1" fill="#0A1118"/>
+  <!-- Bronze accent line at roof base -->
+  <rect x="4" y="27" width="56" height="3" rx="1" fill="#A57340"/>
+</svg>

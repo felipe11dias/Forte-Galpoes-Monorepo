@@ -1,87 +1,56 @@
-/* Forte Galpões — ui-kit global styles
- * Importado pelo Storybook via executor `styles` option.
- * Em apps Angular, importar via `styles` no project.json da app.
- */
+/* Google Fonts — must precede all @tailwind directives */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap');
 
-/* Google Fonts — Inter (fonte variável, pesos 100–900) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+/* Tailwind CSS - importado pelo Storybook via preview.ts */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Forte Galpões — CSS custom properties (design tokens) */
 @layer base {
-  /* ── CSS Custom Properties — Paleta de Cores ───────────────────────────── */
   :root {
-    /* Primary — Navy Steel Blue */
-    --color-primary-50: #f0f4fb;
-    --color-primary-100: #d8e3f4;
-    --color-primary-200: #b1c8ea;
-    --color-primary-300: #82a6d9;
-    --color-primary-400: #5584c5;
-    --color-primary-500: #3468b0;
-    --color-primary-600: #295592;
-    --color-primary-700: #1c3f73;
-    --color-primary-800: #132c52;
-    --color-primary-900: #0b1a33;
-    --color-primary-950: #060d1a;
+    /* Brand colors */
+    --fg-antracito: #1c2733;
+    --fg-bronze: #a57340;
+    --fg-aco: #5a6a7a;
+    --fg-concreto: #d9d3c7;
+    --fg-marfim: #f5f2ed;
+    --fg-cobre: #c89456;
 
-    /* Accent — Construction Orange */
-    --color-accent-50: #fef5ea;
-    --color-accent-100: #fde3c2;
-    --color-accent-200: #fbc680;
-    --color-accent-300: #f9a73d;
-    --color-accent-400: #f48b1a;
-    --color-accent-500: #e87722;
-    --color-accent-600: #c4601a;
-    --color-accent-700: #9c4b15;
-    --color-accent-800: #6f360f;
-    --color-accent-900: #42200a;
-    --color-accent-950: #221005;
+    /* Semantic aliases */
+    --fg-primary: var(--fg-antracito);
+    --fg-secondary: var(--fg-bronze);
+    --fg-accent: var(--fg-cobre);
+    --fg-surface: var(--fg-marfim);
+    --fg-surface-alt: var(--fg-concreto);
+    --fg-muted: var(--fg-aco);
 
-    /* Neutral — Industrial Gray */
-    --color-neutral-50: #f4f5f7;
-    --color-neutral-100: #e6e8ec;
-    --color-neutral-200: #cbd0d7;
-    --color-neutral-300: #a4aeb9;
-    --color-neutral-400: #7a8899;
-    --color-neutral-500: #5b6b7c;
-    --color-neutral-600: #445566;
-    --color-neutral-700: #334151;
-    --color-neutral-800: #202c38;
-    --color-neutral-900: #121a22;
-    --color-neutral-950: #080d11;
-
-    /* Semantic */
-    --color-success: #16a34a;
-    --color-warning: #ca8a04;
-    --color-danger: #dc2626;
-    --color-info: #2563eb;
-
-    /* Surface */
-    --color-surface-bg: #ffffff;
-    --color-surface-base: #f4f5f7;
-    --color-surface-border: #cbd0d7;
-    --color-surface-border-subtle: #e6e8ec;
-    --color-surface-fg: #121a22;
-    --color-surface-fg-muted: #5b6b7c;
+    /* State colors */
+    --fg-success: #2f6d4f;
+    --fg-warning: #b8862a;
+    --fg-danger: #8b2f2f;
 
     /* Typography */
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    --fg-font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --fg-font-serif: 'Cormorant Garamond', 'Playfair Display', serif;
+    --fg-font-sans: 'Inter', 'DM Sans', sans-serif;
+    --fg-font-mono: 'JetBrains Mono', monospace;
+
+    /* Spacing base */
+    --fg-space-unit: 4px;
   }
 
-  /* ── Base Resets ──────────────────────────────────────────────────────── */
   html {
-    font-family: var(--font-sans);
+    font-family: var(--fg-font-sans);
+    color: var(--fg-antracito);
+    background-color: var(--fg-marfim);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  *:focus-visible {
+    outline: 2px solid var(--fg-bronze);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }

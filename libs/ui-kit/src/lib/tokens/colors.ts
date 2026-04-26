@@ -1,86 +1,139 @@
-/**
- * Forte Galpões — Semantic Color Tokens
- *
- * Tokens semânticos que mapeiam a paleta de marca para intenções de uso.
- * Use esses tokens em componentes — nunca referencie cores brutas diretamente.
- *
- * Em CSS, use as variáveis `--color-*` definidas em styles.css.
- * Em TypeScript, use os valores abaixo para garantir rastreabilidade.
- */
-
-/** Tokens de cor para texto. */
-export const TEXT_COLOR_TOKENS = {
-  /** Texto principal (corpo, parágrafos) */
-  primary: 'var(--color-neutral-900)',
-  /** Texto secundário (legendas, metadados) */
-  secondary: 'var(--color-neutral-500)',
-  /** Texto desabilitado */
-  disabled: 'var(--color-neutral-300)',
-  /** Texto em fundos escuros */
-  inverse: '#FFFFFF',
-  /** Texto com cor da marca */
-  brand: 'var(--color-primary-700)',
-  /** Texto com cor de acento */
-  accent: 'var(--color-accent-500)',
-  /** Link padrão */
-  link: 'var(--color-primary-600)',
-  /** Link visitado */
-  linkVisited: 'var(--color-primary-800)',
+export const brandColors = {
+  antracito: {
+    50: '#F0F2F4',
+    100: '#DDE1E6',
+    200: '#BAC2CC',
+    300: '#8A99A8',
+    400: '#627384',
+    500: '#445563',
+    600: '#2F3F4F',
+    700: '#1C2733',
+    800: '#131C24',
+    900: '#0A1118',
+  },
+  bronze: {
+    50: '#FBF5EB',
+    100: '#F5E8D0',
+    200: '#EAD0A0',
+    300: '#DCB46C',
+    400: '#C99047',
+    500: '#A57340',
+    600: '#7E5830',
+    700: '#5E4122',
+    800: '#3D2B15',
+    900: '#1F1409',
+  },
+  aco: {
+    50: '#F0F2F5',
+    100: '#DDE2E8',
+    200: '#BCC5CF',
+    300: '#96A4B1',
+    400: '#728391',
+    500: '#5A6A7A',
+    600: '#475565',
+    700: '#36414F',
+    800: '#252D38',
+    900: '#131720',
+  },
+  concreto: {
+    50: '#FAF9F7',
+    100: '#F5F3EF',
+    200: '#EDE8DF',
+    300: '#E2DAD0',
+    400: '#D9D3C7',
+    500: '#C5BDB0',
+    600: '#A89F92',
+    700: '#857D70',
+    800: '#615A4F',
+    900: '#3E3830',
+  },
+  marfim: {
+    50: '#FEFEFE',
+    100: '#F5F2ED',
+    200: '#EBE6DC',
+    300: '#DDD6CA',
+    400: '#CEC4B5',
+    500: '#BDB19F',
+    600: '#A09283',
+    700: '#7F7466',
+    800: '#5C534A',
+    900: '#3A342F',
+  },
+  cobre: {
+    50: '#FDF7EE',
+    100: '#F9EDDA',
+    200: '#F2D9B0',
+    300: '#E8C180',
+    400: '#D8A85E',
+    500: '#C89456',
+    600: '#A37440',
+    700: '#7A562E',
+    800: '#51391E',
+    900: '#2A1D0F',
+  },
 } as const;
 
-/** Tokens de cor para fundos/superfícies. */
-export const BACKGROUND_COLOR_TOKENS = {
-  /** Fundo de página */
-  page: '#FFFFFF',
-  /** Fundo de superfície sutil (cards, sidebars) */
-  subtle: 'var(--color-neutral-50)',
-  /** Fundo de marca (hero, header dark) */
-  brand: 'var(--color-primary-700)',
-  /** Fundo de acento (CTA, badges) */
-  accent: 'var(--color-accent-500)',
-  /** Overlay/backdrop de modais */
-  overlay: 'rgba(18, 26, 34, 0.6)',
+export const stateColors = {
+  success: {
+    50: '#EAF4EF',
+    100: '#D0E9DC',
+    200: '#A1D3B9',
+    300: '#6EBA93',
+    400: '#48A072',
+    500: '#2F6D4F',
+    600: '#24573E',
+    700: '#1A402D',
+    800: '#102A1E',
+    900: '#08150F',
+  },
+  warning: {
+    50: '#FBF5E6',
+    100: '#F6E8C6',
+    200: '#ECCD8B',
+    300: '#E0B047',
+    400: '#C9952A',
+    500: '#B8862A',
+    600: '#8E6720',
+    700: '#664A17',
+    800: '#3F2E0E',
+    900: '#1A1206',
+  },
+  danger: {
+    50: '#F5EAEA',
+    100: '#EDD1D1',
+    200: '#DBA3A3',
+    300: '#C97070',
+    400: '#B34646',
+    500: '#8B2F2F',
+    600: '#6D2424',
+    700: '#501A1A',
+    800: '#341111',
+    900: '#180808',
+  },
+  info: {
+    50: '#EAF0F8',
+    100: '#D0E0F0',
+    200: '#A0C0E0',
+    300: '#6D9ECE',
+    400: '#4480BA',
+    500: '#2A639E',
+    600: '#204E7C',
+    700: '#163A5A',
+    800: '#0E2639',
+    900: '#07131D',
+  },
 } as const;
 
-/** Tokens de cor para bordas. */
-export const BORDER_COLOR_TOKENS = {
-  DEFAULT: 'var(--color-neutral-200)',
-  subtle: 'var(--color-neutral-100)',
-  strong: 'var(--color-neutral-300)',
-  brand: 'var(--color-primary-200)',
-  accent: 'var(--color-accent-300)',
-  focus: 'var(--color-primary-500)',
-} as const;
-
-/** Tokens de cor para elementos interativos. */
-export const INTERACTIVE_COLOR_TOKENS = {
-  primaryBg: 'var(--color-primary-700)',
-  primaryBgHover: 'var(--color-primary-600)',
-  primaryBgActive: 'var(--color-primary-800)',
-  accentBg: 'var(--color-accent-500)',
-  accentBgHover: 'var(--color-accent-400)',
-  accentBgActive: 'var(--color-accent-600)',
-} as const;
-
-/** Tokens de cor semânticos para status/feedback. */
-export const STATUS_COLOR_TOKENS = {
-  successBg: 'var(--color-success-light)',
-  successText: 'var(--color-success)',
-  warningBg: 'var(--color-warning-light)',
-  warningText: 'var(--color-warning)',
-  dangerBg: 'var(--color-danger-light)',
-  dangerText: 'var(--color-danger)',
-  infoBg: 'var(--color-info-light)',
-  infoText: 'var(--color-info)',
-} as const;
-
-/** Todos os tokens de cor agrupados. */
-export const colorTokens = {
-  text: TEXT_COLOR_TOKENS,
-  background: BACKGROUND_COLOR_TOKENS,
-  border: BORDER_COLOR_TOKENS,
-  interactive: INTERACTIVE_COLOR_TOKENS,
-  status: STATUS_COLOR_TOKENS,
-} as const;
-
-export type ColorTokens = typeof colorTokens;
+export type BrandColorName = keyof typeof brandColors;
+export type StateColorName = keyof typeof stateColors;
+export type ColorScale =
+  | '50'
+  | '100'
+  | '200'
+  | '300'
+  | '400'
+  | '500'
+  | '600'
+  | '700'
+  | '800'
+  | '900';

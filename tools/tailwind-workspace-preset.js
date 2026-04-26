@@ -1,110 +1,158 @@
-/**
- * Forte Galpões — Tailwind CSS Workspace Preset
- *
- * Paleta e tipografia compartilhadas entre todos os projetos do monorepo.
- * Importado por tailwind.config.js de cada lib/app.
- *
- * Tokens de cor sincronizados com:
- *   libs/ui-kit/src/lib/brand/colors.ts
- *
- * @type {import('tailwindcss').Config}
- */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     extend: {
       colors: {
-        // ── Primary — Navy Steel Blue ──────────────────────────────────────
+        // Forte Galpões — primary brand color (dark charcoal)
+        antracito: {
+          50: '#F0F2F4',
+          100: '#DDE1E6',
+          200: '#BAC2CC',
+          300: '#8A99A8',
+          400: '#627384',
+          500: '#445563',
+          600: '#2F3F4F',
+          700: '#1C2733',
+          800: '#131C24',
+          900: '#0A1118',
+        },
+        // Forte Galpões — secondary brand color (warm bronze)
+        bronze: {
+          50: '#FBF5EB',
+          100: '#F5E8D0',
+          200: '#EAD0A0',
+          300: '#DCB46C',
+          400: '#C99047',
+          500: '#A57340',
+          600: '#7E5830',
+          700: '#5E4122',
+          800: '#3D2B15',
+          900: '#1F1409',
+        },
+        // Forte Galpões — support color (steel blue-gray)
+        aco: {
+          50: '#F0F2F5',
+          100: '#DDE2E8',
+          200: '#BCC5CF',
+          300: '#96A4B1',
+          400: '#728391',
+          500: '#5A6A7A',
+          600: '#475565',
+          700: '#36414F',
+          800: '#252D38',
+          900: '#131720',
+        },
+        // Forte Galpões — warm neutral (concrete)
+        concreto: {
+          50: '#FAF9F7',
+          100: '#F5F3EF',
+          200: '#EDE8DF',
+          300: '#E2DAD0',
+          400: '#D9D3C7',
+          500: '#C5BDB0',
+          600: '#A89F92',
+          700: '#857D70',
+          800: '#615A4F',
+          900: '#3E3830',
+        },
+        // Forte Galpões — light neutral (ivory)
+        marfim: {
+          50: '#FEFEFE',
+          100: '#F5F2ED',
+          200: '#EBE6DC',
+          300: '#DDD6CA',
+          400: '#CEC4B5',
+          500: '#BDB19F',
+          600: '#A09283',
+          700: '#7F7466',
+          800: '#5C534A',
+          900: '#3A342F',
+        },
+        // Forte Galpões — accent hover (copper)
+        cobre: {
+          50: '#FDF7EE',
+          100: '#F9EDDA',
+          200: '#F2D9B0',
+          300: '#E8C180',
+          400: '#D8A85E',
+          500: '#C89456',
+          600: '#A37440',
+          700: '#7A562E',
+          800: '#51391E',
+          900: '#2A1D0F',
+        },
+        // Semantic aliases
         primary: {
-          50: '#F0F4FB',
-          100: '#D8E3F4',
-          200: '#B1C8EA',
-          300: '#82A6D9',
-          400: '#5584C5',
-          500: '#3468B0',
-          600: '#295592',
-          700: '#1C3F73',
-          800: '#132C52',
-          900: '#0B1A33',
-          950: '#060D1A',
-          DEFAULT: '#1C3F73',
+          DEFAULT: '#1C2733',
+          50: '#F0F2F4',
+          100: '#DDE1E6',
+          200: '#BAC2CC',
+          300: '#8A99A8',
+          400: '#627384',
+          500: '#445563',
+          600: '#2F3F4F',
+          700: '#1C2733',
+          800: '#131C24',
+          900: '#0A1118',
         },
-
-        // ── Accent — Construction Orange ──────────────────────────────────
-        accent: {
-          50: '#FEF5EA',
-          100: '#FDE3C2',
-          200: '#FBC680',
-          300: '#F9A73D',
-          400: '#F48B1A',
-          500: '#E87722',
-          600: '#C4601A',
-          700: '#9C4B15',
-          800: '#6F360F',
-          900: '#42200A',
-          950: '#221005',
-          DEFAULT: '#E87722',
+        secondary: {
+          DEFAULT: '#A57340',
+          50: '#FBF5EB',
+          100: '#F5E8D0',
+          200: '#EAD0A0',
+          300: '#DCB46C',
+          400: '#C99047',
+          500: '#A57340',
+          600: '#7E5830',
+          700: '#5E4122',
+          800: '#3D2B15',
+          900: '#1F1409',
         },
-
-        // ── Neutral — Industrial Gray ─────────────────────────────────────
-        neutral: {
-          50: '#F4F5F7',
-          100: '#E6E8EC',
-          200: '#CBD0D7',
-          300: '#A4AEB9',
-          400: '#7A8899',
-          500: '#5B6B7C',
-          600: '#445566',
-          700: '#334151',
-          800: '#202C38',
-          900: '#121A22',
-          950: '#080D11',
-        },
-
-        // ── Semantic ──────────────────────────────────────────────────────
+        // State colors
         success: {
-          light: '#DCFCE7',
-          DEFAULT: '#16A34A',
-          dark: '#14532D',
+          DEFAULT: '#2F6D4F',
+          50: '#EAF4EF',
+          500: '#2F6D4F',
+          700: '#1A402D',
         },
         warning: {
-          light: '#FEF9C3',
-          DEFAULT: '#CA8A04',
-          dark: '#713F12',
+          DEFAULT: '#B8862A',
+          50: '#FBF5E6',
+          500: '#B8862A',
+          700: '#664A17',
         },
         danger: {
-          light: '#FEE2E2',
-          DEFAULT: '#DC2626',
-          dark: '#7F1D1D',
-        },
-        info: {
-          light: '#DBEAFE',
-          DEFAULT: '#2563EB',
-          dark: '#1E3A8A',
+          DEFAULT: '#8B2F2F',
+          50: '#F5EAEA',
+          500: '#8B2F2F',
+          700: '#501A1A',
         },
       },
-
-      // ── Typography ────────────────────────────────────────────────────────
       fontFamily: {
-        sans: [
-          'Inter',
-          'ui-sans-serif',
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'Roboto',
-          'sans-serif',
-        ],
-        mono: [
-          'JetBrains Mono',
-          'Fira Code',
-          'ui-monospace',
-          'SFMono-Regular',
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          'monospace',
-        ],
+        display: ['Barlow Condensed', 'Archivo Black', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'Playfair Display', 'ui-serif', 'Georgia', 'serif'],
+        sans: ['Inter', 'DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+      },
+      fontSize: {
+        display: ['4rem', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '900' }],
+        h1: ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        h2: ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+        h3: ['1.75rem', { lineHeight: '1.25', fontWeight: '600' }],
+        h4: ['1.375rem', { lineHeight: '1.3', fontWeight: '600' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.6' }],
+        body: ['1rem', { lineHeight: '1.5' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.5' }],
+        caption: ['0.75rem', { lineHeight: '1.4' }],
+        overline: ['0.6875rem', { lineHeight: '1.4', letterSpacing: '0.12em', fontWeight: '600' }],
+      },
+      boxShadow: {
+        'elevation-1': '0 1px 3px rgba(28, 39, 51, 0.08), 0 1px 2px rgba(28, 39, 51, 0.06)',
+        'elevation-2': '0 4px 6px rgba(28, 39, 51, 0.07), 0 2px 4px rgba(28, 39, 51, 0.06)',
+        'elevation-3': '0 10px 15px rgba(28, 39, 51, 0.07), 0 4px 6px rgba(28, 39, 51, 0.05)',
+        'elevation-4': '0 20px 25px rgba(28, 39, 51, 0.08), 0 10px 10px rgba(28, 39, 51, 0.04)',
+        'elevation-5': '0 25px 50px rgba(28, 39, 51, 0.12)',
+        bronze: '0 4px 14px rgba(165, 115, 64, 0.25)',
       },
     },
   },

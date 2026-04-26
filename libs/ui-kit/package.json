@@ -2,7 +2,9 @@
   "name": "@forte-galpoes/ui-kit",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/core": "^19.2.0"
+    "@angular/core": "^19.2.0",
+    "@storybook/angular": ">=10.0.0",
+    "storybook": ">=10.0.0"
   },
   "sideEffects": false
 }

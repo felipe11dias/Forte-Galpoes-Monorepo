@@ -1,8 +1,9 @@
 /**
  * Patches nx 22.6.5 installation which is missing bin/nx.js and
- * src/project-graph/plugins/isolation/plugin-worker.js in the pnpm virtual store.
+ * src/project-graph/plugins/isolation/plugin-worker.js.
  *
- * This is a known packaging regression introduced between 22.6.1 and 22.6.5.
+ * Known packaging regression introduced between 22.6.1 and 22.6.5.
+ * Patches both the symlinked node_modules/nx AND the pnpm virtual store entries.
  * Run via: node tools/nx-patch.cjs
  */
 'use strict';
@@ -13,26 +14,29 @@ const { execSync } = require('child_process');
 
 const workspaceRoot = path.join(__dirname, '..');
 
-function findNxDir() {
-  const candidates = [
-    path.join(workspaceRoot, 'node_modules', 'nx'),
-    // pnpm virtual store
-    ...findPnpmNxDirs(),
-  ];
-  return candidates.find((d) => fs.existsSync(d));
-}
+function findAllNxDirs() {
+  const dirs = [];
 
-function findPnpmNxDirs() {
+  // Symlinked node_modules/nx
+  const symlinked = path.join(workspaceRoot, 'node_modules', 'nx');
+  if (fs.existsSync(symlinked)) dirs.push(symlinked);
+
+  // pnpm virtual store entries
   const pnpmStore = path.join(workspaceRoot, 'node_modules', '.pnpm');
-  if (!fs.existsSync(pnpmStore)) return [];
-  try {
-    return fs
-      .readdirSync(pnpmStore)
-      .filter((d) => d.startsWith('nx@'))
-      .map((d) => path.join(pnpmStore, d, 'node_modules', 'nx'));
-  } catch {
-    return [];
+  if (fs.existsSync(pnpmStore)) {
+    try {
+      fs.readdirSync(pnpmStore)
+        .filter((d) => d.startsWith('nx@'))
+        .forEach((d) => {
+          const candidate = path.join(pnpmStore, d, 'node_modules', 'nx');
+          if (fs.existsSync(candidate)) dirs.push(candidate);
+        });
+    } catch {
+      // ignore
+    }
   }
+
+  return dirs;
 }
 
 function findGlobalNxDir() {
@@ -44,11 +48,11 @@ function findGlobalNxDir() {
   return null;
 }
 
-const localNx = findNxDir();
+const nxDirs = findAllNxDirs();
 const globalNx = findGlobalNxDir();
 
-if (!localNx) {
-  console.warn('[nx-patch] Local nx not found. Skipping patch.');
+if (nxDirs.length === 0) {
+  console.warn('[nx-patch] No local nx installations found. Skipping patch.');
   process.exit(0);
 }
 
@@ -58,20 +62,22 @@ if (!globalNx) {
 }
 
 const filesToPatch = [
-  ['bin/nx.js'],
-  ['src/project-graph/plugins/isolation/plugin-worker.js'],
+  'bin/nx.js',
+  'src/project-graph/plugins/isolation/plugin-worker.js',
 ];
 
 let patched = 0;
-for (const [relPath] of filesToPatch) {
-  const target = path.join(localNx, relPath);
-  const source = path.join(globalNx, relPath);
+for (const nxDir of nxDirs) {
+  for (const relPath of filesToPatch) {
+    const target = path.join(nxDir, relPath);
+    const source = path.join(globalNx, relPath);
 
-  if (!fs.existsSync(target) && fs.existsSync(source)) {
-    fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.copyFileSync(source, target);
-    console.log(`[nx-patch] Copied: ${relPath}`);
-    patched++;
+    if (!fs.existsSync(target) && fs.existsSync(source)) {
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.copyFileSync(source, target);
+      console.log(`[nx-patch] Copied: ${relPath} → ${path.relative(workspaceRoot, nxDir)}`);
+      patched++;
+    }
   }
 }
 
