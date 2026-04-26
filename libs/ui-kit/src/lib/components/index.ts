@@ -14,3 +14,12 @@ export { FormFieldComponent } from './form-field/form-field.component';
 export { StatComponent } from './stat/stat.component';
 
 export { WhatsAppButtonComponent } from './whatsapp-button/whatsapp-button.component';
+
+export { InputComponent } from './input/input.component';
+
+export { TestimonialComponent } from './testimonial/testimonial.component';
+
+export { NavbarComponent } from './navbar/navbar.component';
+export type { NavLink } from './navbar/navbar.component';
+
+export { FooterComponent } from './footer/footer.component';
