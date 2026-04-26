@@ -8,15 +8,8 @@
       "!{projectRoot}/**/*.spec.ts",
       "!{projectRoot}/**/*.spec.js",
       "!{projectRoot}/jest.config.ts",
-      "!{projectRoot}/src/test-setup.ts",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/src/test-setup.[jt]s",
-      "!{projectRoot}/test-setup.[jt]s",
-      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-      "!{projectRoot}/.storybook/**/*",
-      "!{projectRoot}/tsconfig.storybook.json"
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/src/test-setup.ts"
     ]
   },
   "targetDefaults": {
@@ -30,7 +23,7 @@
       "cache": true
     },
     "lint": {
-      "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"],
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json", "{workspaceRoot}/.eslintignore"],
       "cache": true
     },
     "serve": {
@@ -40,47 +33,39 @@
       "inputs": ["default", "^production"],
       "cache": true
     },
-    "@nx/angular:package": {
+    "typecheck": {
+      "inputs": ["default", "^production"],
+      "cache": true
+    },
+    "@angular-devkit/build-angular:application": {
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
-    },
-    "@nx/jest:jest": {
-      "cache": true,
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/js/typescript",
       "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
         }
       }
-    },
-    "build-storybook": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        "{projectRoot}/.storybook/**/*",
-        "{projectRoot}/tsconfig.storybook.json"
-      ]
     }
-  },
+  ],
   "defaultBase": "main",
-  "release": {
-    "version": {
-      "preVersionCommand": "pnpm dlx nx run-many -t build"
-    }
-  },
   "generators": {
-    "@nx/angular:library": {
+    "@nx/angular:application": {
+      "e2eTestRunner": "none",
       "linter": "eslint",
+      "style": "scss",
       "unitTestRunner": "jest"
-    },
-    "@nx/angular:component": {
-      "style": "scss"
     }
   }
 }

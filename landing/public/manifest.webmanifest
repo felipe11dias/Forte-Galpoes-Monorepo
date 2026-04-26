@@ -1,0 +1,17 @@
+{
+  "name": "Forte Galpões",
+  "short_name": "Forte Galpões",
+  "description": "Especialista em locação e venda de galpões industriais em Fortaleza e região.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F2ED",
+  "theme_color": "#1C2733",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

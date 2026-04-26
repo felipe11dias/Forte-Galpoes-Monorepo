@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --fg-antracito: #1c2733;
+    --fg-bronze: #a57340;
+    --fg-aco: #5a6a7a;
+    --fg-concreto: #d9d3c7;
+    --fg-marfim: #f5f2ed;
+    --fg-cobre: #c89456;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-antracito-700 bg-marfim-50 antialiased;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-bronze-500;
+  }
+}
