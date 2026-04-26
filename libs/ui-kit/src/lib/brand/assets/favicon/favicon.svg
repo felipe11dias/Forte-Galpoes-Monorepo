@@ -1,0 +1,17 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Forte Galpões</title>
+  <!-- Favicon principal — suportado por todos os navegadores modernos (Chrome 80+, Firefox 41+, Safari 12+) -->
+  <!-- Para navegadores antigos, gere favicon.ico a partir deste arquivo via https://favicon.io -->
+  <defs>
+    <clipPath id="fav-clip">
+      <rect width="32" height="32" rx="4"/>
+    </clipPath>
+  </defs>
+  <rect width="32" height="32" rx="4" fill="#1C3F73"/>
+  <rect y="28" width="32" height="4" fill="#E87722" clip-path="url(#fav-clip)"/>
+  <text
+    x="16" y="20"
+    font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="800" font-size="13" fill="#FFFFFF"
+    text-anchor="middle" letter-spacing="-0.3">FG</text>
+</svg>

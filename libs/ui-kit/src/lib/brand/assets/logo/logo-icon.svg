@@ -1,0 +1,21 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forte Galpões — ícone">
+  <title>Forte Galpões</title>
+  <defs>
+    <clipPath id="icon-clip">
+      <rect width="48" height="48" rx="6"/>
+    </clipPath>
+  </defs>
+  <!-- Fundo navy steel blue -->
+  <rect width="48" height="48" rx="6" fill="#1C3F73"/>
+  <!-- Faixa de acento laranja (base) -->
+  <rect y="42" width="48" height="6" fill="#E87722" clip-path="url(#icon-clip)"/>
+  <!-- Monograma FG -->
+  <text
+    x="24" y="29"
+    font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="800"
+    font-size="20"
+    fill="#FFFFFF"
+    text-anchor="middle"
+    letter-spacing="-0.5">FG</text>
+</svg>

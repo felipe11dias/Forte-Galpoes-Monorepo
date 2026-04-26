@@ -1,0 +1,16 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Forte Galpões 16×16</title>
+  <!-- Variante de 16×16: simplificada para máxima legibilidade em tamanho mínimo -->
+  <defs>
+    <clipPath id="fav16-clip">
+      <rect width="16" height="16" rx="2"/>
+    </clipPath>
+  </defs>
+  <rect width="16" height="16" rx="2" fill="#1C3F73"/>
+  <rect y="13" width="16" height="3" fill="#E87722" clip-path="url(#fav16-clip)"/>
+  <text
+    x="8" y="10"
+    font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="800" font-size="7" fill="#FFFFFF"
+    text-anchor="middle" letter-spacing="0">FG</text>
+</svg>

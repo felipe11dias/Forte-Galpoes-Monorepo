@@ -1,0 +1,155 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Brand / Tipografia" />
+
+# Tipografia — Forte Galpões
+
+**Fonte primária**: [Inter](https://rsms.me/inter/) — fonte variável de código aberto, moderna e altamente legível em todas as escalas.
+
+> Inter é usada exclusivamente como fonte sans-serif da marca.
+> Não existe fonte secundária — use os pesos disponíveis para criar hierarquia.
+
+---
+
+## Carregamento via Google Fonts
+
+Adicione no `<head>` do seu HTML:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+  rel="stylesheet"
+/>
+```
+
+Ou importe via `@fontsource/inter` para self-hosting:
+```bash
+pnpm add @fontsource-variable/inter
+```
+```ts
+// No main.ts da aplicação
+import '@fontsource-variable/inter';
+```
+
+---
+
+## Pesos disponíveis
+
+<div style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif", display: 'grid', gap: '0.5rem', marginBottom: '2rem' }}>
+  {[
+    { weight: 300, name: 'Light' },
+    { weight: 400, name: 'Regular' },
+    { weight: 500, name: 'Medium' },
+    { weight: 600, name: 'SemiBold' },
+    { weight: 700, name: 'Bold' },
+    { weight: 800, name: 'ExtraBold' },
+    { weight: 900, name: 'Black' },
+  ].map(({ weight, name }) => (
+    <div key={weight} style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+      <span style={{ fontWeight: weight, fontSize: '1.25rem', minWidth: '220px', color: '#1C3F73' }}>
+        Forte Galpões {name}
+      </span>
+      <span style={{ color: '#5B6B7C', fontSize: '0.75rem', fontFamily: 'monospace' }}>
+        font-weight: {weight}
+      </span>
+    </div>
+  ))}
+</div>
+
+---
+
+## Escala de Tamanhos
+
+<Typeset
+  fontSizes={[12, 14, 16, 18, 20, 24, 30, 36, 48, 60]}
+  fontFamily="Inter, 'Helvetica Neue', Arial, sans-serif"
+  fontWeight={400}
+  sampleText="Forte Galpões — Corretagem Industrial"
+/>
+
+---
+
+## Hierarquia Semântica
+
+<div style={{ fontFamily: "'Inter', 'Helvetica Neue', sans-serif", maxWidth: '640px' }}>
+  <div style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid #E6E8EC' }}>
+    <div style={{ color: '#A4AEB9', fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '0.25rem' }}>
+      DISPLAY — 3.75rem / 700 / tracking: -0.025em
+    </div>
+    <div style={{ fontSize: '3.75rem', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1, color: '#121A22' }}>
+      Galpões
+    </div>
+  </div>
+
+  <div style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid #E6E8EC' }}>
+    <div style={{ color: '#A4AEB9', fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '0.25rem' }}>
+      H1 — 3rem / 700 / tracking: -0.025em
+    </div>
+    <div style={{ fontSize: '3rem', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1, color: '#121A22' }}>
+      Área Disponível
+    </div>
+  </div>
+
+  <div style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid #E6E8EC' }}>
+    <div style={{ color: '#A4AEB9', fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '0.25rem' }}>
+      H2 — 2.25rem / 700 / tracking: -0.025em
+    </div>
+    <div style={{ fontSize: '2.25rem', fontWeight: 700, letterSpacing: '-0.025em', color: '#121A22' }}>
+      Condomínio Logístico
+    </div>
+  </div>
+
+  <div style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid #E6E8EC' }}>
+    <div style={{ color: '#A4AEB9', fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '0.25rem' }}>
+      H3 — 1.875rem / 600 / tracking: -0.025em
+    </div>
+    <div style={{ fontSize: '1.875rem', fontWeight: 600, letterSpacing: '-0.025em', color: '#121A22' }}>
+      Galpão Classe A+
+    </div>
+  </div>
+
+  <div style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid #E6E8EC' }}>
+    <div style={{ color: '#A4AEB9', fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '0.25rem' }}>
+      BODY — 1rem / 400 / line-height: 1.5
+    </div>
+    <div style={{ fontSize: '1rem', fontWeight: 400, lineHeight: 1.5, color: '#334151' }}>
+      Galpão logístico de 8.500 m² com pé-direito de 12m, 4 docas niveladoras,
+      portaria 24h e gerador próprio. Localização estratégica no corredor
+      Anhanguera a 2km do trevo de acesso.
+    </div>
+  </div>
+
+  <div style={{ marginBottom: '1.5rem' }}>
+    <div style={{ color: '#A4AEB9', fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '0.25rem' }}>
+      LABEL / OVERLINE — 0.75rem / 600 / tracking: 0.1em / UPPERCASE
+    </div>
+    <div style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', color: '#E87722', textTransform: 'uppercase' }}>
+      Oportunidade — Disponível Imediato
+    </div>
+  </div>
+</div>
+
+---
+
+## Tailwind CSS — Classes Disponíveis
+
+```html
+<!-- Família -->
+<p class="font-sans">Texto em Inter</p>
+
+<!-- Pesos -->
+<p class="font-light">Light 300</p>
+<p class="font-normal">Regular 400</p>
+<p class="font-medium">Medium 500</p>
+<p class="font-semibold">SemiBold 600</p>
+<p class="font-bold">Bold 700</p>
+<p class="font-extrabold">ExtraBold 800</p>
+<p class="font-black">Black 900</p>
+
+<!-- Tamanhos -->
+<h1 class="text-5xl font-bold tracking-tight">Título Principal</h1>
+<p class="text-base leading-relaxed">Corpo de texto</p>
+<span class="text-xs font-semibold tracking-widest uppercase">Label</span>
+```

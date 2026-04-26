@@ -1,0 +1,128 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Brand / Logo" />
+
+# Logo — Forte Galpões
+
+O logo é composto por um **monograma FG** (badge quadrado em navy com faixa laranja) e um **wordmark** com o nome completo e subtítulo da empresa.
+
+> **Nota de produção**: Os SVGs usam `<text>` com font-stack de fallback.
+> Para produção final, exporte os paths tipográficos do Figma.
+
+---
+
+## Variações
+
+### Logo Horizontal *(uso principal)*
+
+<div style={{ padding: '2rem', background: '#F4F5F7', borderRadius: '8px', marginBottom: '1rem' }}>
+  <img src="/logo/logo-horizontal.svg" alt="Forte Galpões — Logo Horizontal" style={{ height: '52px' }} />
+</div>
+
+Uso: materiais digitais, cabeçalhos, assinatura de e-mail, rodapé de site.
+
+---
+
+### Logo Vertical
+
+<div style={{ padding: '2rem', background: '#F4F5F7', borderRadius: '8px', marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
+  <img src="/logo/logo-vertical.svg" alt="Forte Galpões — Logo Vertical" style={{ height: '88px' }} />
+</div>
+
+Uso: redes sociais (perfil), sinalização, espaços quadrados/verticais.
+
+---
+
+### Ícone / Monograma FG *(uso compacto)*
+
+<div style={{ padding: '2rem', background: '#F4F5F7', borderRadius: '8px', marginBottom: '1rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
+  <img src="/logo/logo-icon.svg" alt="Forte Galpões — Ícone" style={{ height: '48px' }} />
+  <img src="/logo/logo-icon.svg" alt="Forte Galpões — Ícone" style={{ height: '32px' }} />
+  <img src="/logo/logo-icon.svg" alt="Forte Galpões — Ícone" style={{ height: '24px' }} />
+</div>
+
+Uso: favicon, avatar, app icon, badge de perfil. Mínimo recomendado: **24px**.
+
+---
+
+### Logo Inverso *(sobre fundos escuros)*
+
+<div style={{ padding: '2rem', background: '#1C3F73', borderRadius: '8px', marginBottom: '1rem' }}>
+  <img src="/logo/logo-inverse.svg" alt="Forte Galpões — Logo Inverso" style={{ height: '52px' }} />
+</div>
+
+<div style={{ padding: '2rem', background: '#121A22', borderRadius: '8px', marginBottom: '1rem' }}>
+  <img src="/logo/logo-inverse.svg" alt="Forte Galpões — Logo Inverso em dark" style={{ height: '52px' }} />
+</div>
+
+Uso: hero sections com fundo navy/dark, overlays sobre fotos.
+
+---
+
+### Logo Monocromático *(preto e branco)*
+
+<div style={{ padding: '2rem', background: '#FFFFFF', borderRadius: '8px', border: '1px solid #E6E8EC', marginBottom: '0.5rem' }}>
+  <img src="/logo/logo-monochrome.svg" alt="Forte Galpões — Logo Monocromático" style={{ height: '52px' }} />
+</div>
+
+Uso: documentos jurídicos, impressão em escala de cinza, carimbo, papel timbrado.
+
+---
+
+## Espaço de Proteção
+
+O espaço de proteção mínimo ao redor do logo é equivalente à **altura da letra "F"** no wordmark.
+Nenhum elemento visual deve invadir essa área.
+
+```
+┌──────────────────────────────────────────┐
+│         ← altura do "F"                 │
+│  ← "F"  [  LOGO  ]  → "F" →            │
+│         ↓ altura do "F"                 │
+└──────────────────────────────────────────┘
+```
+
+---
+
+## Uso em HTML / Angular
+
+```html
+<!-- Logo horizontal como img tag -->
+<img
+  src="assets/fg-brand/logo/logo-horizontal.svg"
+  alt="Forte Galpões"
+  height="48"
+  width="240"
+/>
+
+<!-- Favicon (adicionar ao <head>) -->
+<link rel="icon" type="image/svg+xml" href="assets/fg-brand/favicon/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/fg-brand/favicon/apple-touch-icon.svg" />
+<link rel="manifest" href="assets/fg-brand/favicon/site.webmanifest" />
+```
+
+**Angular `project.json` — assets glob:**
+
+```json
+{
+  "glob": "**/*",
+  "input": "libs/ui-kit/src/lib/brand/assets",
+  "output": "assets/fg-brand"
+}
+```
+
+---
+
+## Downloads
+
+| Arquivo | Variação | Uso |
+|---|---|---|
+| `logo-horizontal.svg` | Horizontal completo | Site, e-mail, docs |
+| `logo-vertical.svg` | Vertical completo | Social, sinalização |
+| `logo-icon.svg` | Ícone FG | Favicon, avatar |
+| `logo-monochrome.svg` | Monocromático | Impressão P&B |
+| `logo-inverse.svg` | Inverso | Fundos escuros |
+| `favicon.svg` | Favicon SVG | `<link rel="icon">` |
+| `apple-touch-icon.svg` | 180×180 | iOS home screen |
+| `icon-192.svg` | 192×192 | PWA Android |
+| `icon-512.svg` | 512×512 | PWA splash |
